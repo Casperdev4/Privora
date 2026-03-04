@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privora - La cybersécurité n'est pas une option</title>
+    <meta name="description" content="Privora - Solutions de cybersécurité pour TPE et PME. Supervision SOC 24/7, Infogérance, Pentest & Audits.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://privora.fr/">
+    <meta property="og:title" content="Privora - La cybersécurité n'est pas une option">
+    <meta property="og:description" content="Solutions de cybersécurité pour TPE et PME. Supervision SOC 24/7, Infogérance, Pentest & Audits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privora.fr/">
+    <meta property="og:image" content="https://privora.fr/privora_logo.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privora - La cybersécurité n'est pas une option">
+    <meta name="twitter:description" content="Solutions de cybersécurité pour TPE et PME. Supervision SOC 24/7, Infogérance, Pentest & Audits.">
+    <meta name="twitter:image" content="https://privora.fr/privora_logo.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Privora",
+        "description": "Solutions de cybersécurité pour TPE et PME",
+        "url": "https://privora.fr",
+        "telephone": "+33610850501",
+        "email": "contact@privora.fr",
+        "areaServed": "FR",
+        "serviceType": ["Cybersécurité", "Infogérance", "Pentest", "SOC 24/7"]
+    }
+    </script>
+    <link rel="preload" href="https://unpkg.com/three-globe/example/img/earth-night.jpg" as="image" crossorigin>
+    <link rel="preload" href="https://unpkg.com/three-globe/example/img/night-sky.png" as="image" crossorigin>
+    <script src="https://unpkg.com/globe.gl"></script>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <a href="tel:0610850501" class="sos-line">
+                <span class="sos-icon">&#9888;</span> UNE ATTAQUE ? S.O.S. LINE <strong>06 10 85 05 01</strong>
+            </a>
+            <a href="tarif-infogerance-informatique.html" class="top-blog-link">Nos offres</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <img src="privora_logo.png" alt="Privora">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="tarif-infogerance-informatique.html">Offres</a></li>
+                <li><a href="cybersecurite-pme.html" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-image">
+            <img src="privora_hero.webp" alt="Cybersécurité Privora">
+        </div>
+        <div class="hero-overlay"></div>
+        <canvas id="particles-canvas"></canvas>
+        <div class="scan-line"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 data-text="La cybersécurité n'est pas une option">La cybersécurité<br><span class="gradient-text">n'est pas une option</span></h1>
+                <p class="hero-subtitle">Les cyberattaques coûtent en moyenne <strong>1,5 milliard de dollars</strong> à une entreprise. Grâce à notre système d'IA avancé, nous bloquons l'attaque avant même qu'elle ne se produise.<span class="cursor"></span></p>
+                <a href="tarif-infogerance-informatique.html" class="btn btn-primary">Nos Expertises</a>
+            </div>
+        </div>
+        <div class="cyber-status">
+            <div class="cyber-status-item">
+                <span class="status-dot active"></span>
+                <span>Firewall actif</span>
+            </div>
+            <div class="cyber-status-item">
+                <span class="status-dot active"></span>
+                <span>SOC en ligne</span>
+            </div>
+            <div class="cyber-status-item">
+                <span class="status-dot active"></span>
+                <span>0 menace détectée</span>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Protection 360° -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Protection 360°</span>
+                <h2>Notre gamme complète de produits et services<br>ne laisse <span class="highlight">aucune place</span> aux attaques malveillantes.</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Supervision & SOC 24/7</h3>
+                    <p>Détection par IA, réponse XDR instantanée, contrôle périphériques et veille continue 24/7.</p>
+                    <a href="entreprise-cybersecurite.html" class="btn-link">En savoir plus &rarr;</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M6 8h.01M9 8h.01"/></svg>
+                    </div>
+                    <h3>Infogérance & Protection</h3>
+                    <p>Sécurité serveurs & cloud, gestion pare-feu et protection mobile Android/iOS.</p>
+                    <a href="infogerance-informatique.html" class="btn-link">En savoir plus &rarr;</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Pentest & Audits</h3>
+                    <p>Tests d'intrusion, rapports précis et conformité réglementaire.</p>
+                    <a href="pentest-audit.html" class="btn-link">En savoir plus &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Attack Map -->
+    <section class="section section-dark attack-map-section" id="attack-map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Temps réel</span>
+                <h2>Carte des <span class="highlight">cyberattaques</span> en direct</h2>
+            </div>
+            <div class="attack-map-wrapper">
+                <div class="globe-container">
+                    <div id="globeViz"></div>
+                    <div class="globe-overlay">
+                        <div class="globe-stats">
+                            <div class="ams-item">
+                                <span class="ams-value" id="attackCount">0</span>
+                                <span class="ams-label">Attaques détectées</span>
+                            </div>
+                            <div class="ams-item">
+                                <span class="ams-value" id="blockedCount">0</span>
+                                <span class="ams-label">Menaces bloquées</span>
+                            </div>
+                            <div class="ams-item">
+                                <span class="ams-value ams-live">
+                                    <span class="status-dot active"></span> LIVE
+                                </span>
+                                <span class="ams-label">Surveillance active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="attack-feed" id="attackFeed">
+                    <div class="attack-feed-header">
+                        <span class="status-dot active"></span>
+                        <span>Flux d'attaques en direct</span>
+                    </div>
+                    <div class="attack-feed-list" id="attackFeedList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyber Tools Section -->
+    <section class="section section-dark tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Outils gratuits</span>
+                <h2>Centre de <span class="highlight">surveillance</span> cyber</h2>
+            </div>
+            <div class="tools-tabs">
+                <button class="tool-tab active" data-tool="url">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    Scanner d'URL
+                </button>
+                <button class="tool-tab" data-tool="dns">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    Intelligence DNS
+                </button>
+                <button class="tool-tab" data-tool="shodan">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    Test d'exposition
+                </button>
+                <button class="tool-tab" data-tool="ip">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Réputation IP
+                </button>
+            </div>
+            <div class="tools-content">
+                <!-- URL Scanner -->
+                <div class="tool-panel active" id="tool-url">
+                    <div class="tool-panel-header">
+                        <h3>Scanner d'URL</h3>
+                        <p>Analysez un lien suspect avec 60+ moteurs antivirus</p>
+                    </div>
+                    <div class="tool-input-group">
+                        <input type="text" id="urlInput" placeholder="Entrez une URL (ex: https://example.com)">
+                        <button class="btn btn-primary" id="urlScan">Scanner</button>
+                    </div>
+                    <div id="urlResult" class="tool-result"></div>
+                </div>
+                <!-- DNS Intel -->
+                <div class="tool-panel" id="tool-dns">
+                    <div class="tool-panel-header">
+                        <h3>Intelligence DNS</h3>
+                        <p>Analysez l'historique DNS et les sous-domaines d'un domaine</p>
+                    </div>
+                    <div class="tool-input-group">
+                        <input type="text" id="dnsInput" placeholder="Entrez un domaine (ex: example.com)">
+                        <button class="btn btn-primary" id="dnsCheck">Analyser</button>
+                    </div>
+                    <div id="dnsResult" class="tool-result"></div>
+                </div>
+                <!-- Shodan Exposure -->
+                <div class="tool-panel" id="tool-shodan">
+                    <div class="tool-panel-header">
+                        <h3>Test d'exposition</h3>
+                        <p>Découvrez ce qui est visible depuis Internet sur votre infrastructure</p>
+                    </div>
+                    <div class="tool-input-group">
+                        <input type="text" id="shodanInput" placeholder="Entrez un domaine ou une IP">
+                        <button class="btn btn-primary" id="shodanCheck">Scanner</button>
+                    </div>
+                    <div id="shodanResult" class="tool-result"></div>
+                </div>
+                <!-- IP Checker -->
+                <div class="tool-panel" id="tool-ip">
+                    <div class="tool-panel-header">
+                        <h3>Vérification de réputation IP</h3>
+                        <p>Vérifiez si une adresse IP est signalée comme malveillante</p>
+                    </div>
+                    <div class="tool-input-group">
+                        <input type="text" id="ipInput" placeholder="Entrez une adresse IP (ex: 185.220.101.34)">
+                        <button class="btn btn-primary" id="ipCheck">Analyser</button>
+                    </div>
+                    <div id="ipResult" class="tool-result"></div>
+                </div>
+            </div>
+            <p class="tools-disclaimer">Ces outils utilisent des données publiques. Pour une analyse approfondie, <a href="cybersecurite-pme.html">contactez nos experts</a>.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Notre mission</span>
+                <h2>Cybersécurité<br>pour <span class="highlight">entreprises</span></h2>
+                <p class="section-desc">Nous couvrons tous les aspects de la cybersécurité afin de protéger vos réseaux, vos serveurs et vos collaborateurs, où qu'ils soient.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-card-step">01</div>
+                    <div class="mission-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Détection & Réponse</h4>
+                    <p>Notre IA analyse en continu votre réseau et neutralise les menaces en temps réel avant qu'elles ne causent des dégâts.</p>
+                    <div class="mission-card-stat">
+                        <span class="stat-value">< 30s</span>
+                        <span class="stat-desc">temps de réponse</span>
+                    </div>
+                    <a href="entreprise-cybersecurite.html" class="btn-link">SOC 24/7 &rarr;</a>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-card-step">02</div>
+                    <div class="mission-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M6 8h.01M9 8h.01"/></svg>
+                    </div>
+                    <h4>Infogérance & Protection</h4>
+                    <p>Gestion complète de votre infrastructure : serveurs, cloud, pare-feu, endpoints. Votre SI est entre de bonnes mains.</p>
+                    <div class="mission-card-stat">
+                        <span class="stat-value">99.9%</span>
+                        <span class="stat-desc">disponibilité garantie</span>
+                    </div>
+                    <a href="infogerance-informatique.html" class="btn-link">Infogérance &rarr;</a>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-card-step">03</div>
+                    <div class="mission-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h4>Pentest & Audits</h4>
+                    <p>Tests d'intrusion certifiés et audits de conformité pour identifier vos failles avant que les hackers ne le fassent.</p>
+                    <div class="mission-card-stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-desc">des failles documentées</span>
+                    </div>
+                    <a href="pentest-audit.html" class="btn-link">Pentest &rarr;</a>
+                </div>
+            </div>
+            <div class="text-center-mt">
+                <a href="tarif-infogerance-informatique.html" class="btn btn-primary">Découvrir nos offres</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats + Contact Banner -->
+    <section class="stats-banner stats-contact-banner">
+        <div class="data-flow"></div>
+        <div class="data-flow"></div>
+        <div class="data-flow"></div>
+        <div class="stats-globe-bg"></div>
+        <div class="container">
+            <div class="stats-contact-grid">
+                <div class="stats-content">
+                    <div class="stat-number" data-target="15372">0</div>
+                    <p class="stat-label">sites web piratés <strong>chaque jour</strong></p>
+                    <p class="stat-warning">Ne soyez pas la prochaine victime !</p>
+                    <div class="stats-features">
+                        <div class="stats-feature-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            <span>Protection 24/7</span>
+                        </div>
+                        <div class="stats-feature-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Réponse en < 30s</span>
+                        </div>
+                        <div class="stats-feature-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>Audit gratuit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-contact-form">
+                    <h3>Demandez votre audit gratuit</h3>
+                    <p>Un expert vous recontacte sous 24h</p>
+                    <form id="statsContactForm" action="mailto:contact@privora.fr" method="POST">
+                        <div class="scf-row">
+                            <label for="scf-name" class="sr-only">Nom</label>
+                            <input type="text" id="scf-name" name="name" placeholder="Nom *" required>
+                            <label for="scf-company" class="sr-only">Entreprise</label>
+                            <input type="text" id="scf-company" name="company" placeholder="Entreprise">
+                        </div>
+                        <div class="scf-row">
+                            <label for="scf-email" class="sr-only">Email</label>
+                            <input type="email" id="scf-email" name="email" placeholder="Email *" required>
+                            <label for="scf-phone" class="sr-only">Téléphone</label>
+                            <input type="tel" id="scf-phone" name="phone" placeholder="Téléphone *" required>
+                        </div>
+                        <label for="scf-subject" class="sr-only">Sujet</label>
+                        <select id="scf-subject" name="subject">
+                            <option value="">Sujet de votre demande</option>
+                            <option value="audit">Audit de sécurité</option>
+                            <option value="soc">Supervision SOC 24/7</option>
+                            <option value="infogerance">Infogérance</option>
+                            <option value="pentest">Pentest & Tests d'intrusion</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <label for="scf-message" class="sr-only">Message</label>
+                        <textarea id="scf-message" name="message" placeholder="Votre message..." rows="3"></textarea>
+                        <button type="submit" class="btn btn-accent scf-submit">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à sécuriser votre&nbsp;entreprise&nbsp;?</h2>
+                <p>Contactez-nous dès maintenant pour un audit gratuit de votre infrastructure.</p>
+                <div class="cta-buttons">
+                    <a href="cybersecurite-pme.html" class="btn btn-primary">Nous contacter</a>
+                    <a href="tarif-infogerance-informatique.html" class="btn btn-outline">Voir nos offres</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-bg">
+            <img src="footer.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="container footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="privora_logo.png" alt="Privora" class="footer-logo">
+                    <p>Solutions de cybersécurité pour TPE et PME.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="tarif-infogerance-informatique.html">Offres</a></li>
+                        <li><a href="cybersecurite-pme.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:0610850501">06 10 85 05 01</a></li>
+                        <li><a href="mailto:contact@privora.fr">contact@privora.fr</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Privora - Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:privora.fr)",
+      "Bash(ls -la *.html *.css *.js *.webp *.png)",
+      "WebFetch(domain:webprime.fr)",
+      "Bash(sort -t: -k2 -nr)",
+      "Bash(grep -n \"scanner\\\\|tool-content\\\\|url.*scan\" /c/Users/Webpr/Desktop/Privora/*.html)",
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(node \"c:/Users/Webpr/Desktop/Privora/_fix-fonts.js\")"
+    ]
+  }
+}
