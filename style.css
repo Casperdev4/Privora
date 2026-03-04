@@ -1,9 +1,3 @@
-/* ===========================
-   PRIVORA - Luxe Cyber Theme
-   Inspired by index2.css aesthetic
-   =========================== */
-
-/* Reset */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -35,7 +29,6 @@
     --font-body: 'Montserrat', sans-serif;
     --font-heading: 'Cormorant Garamond', serif;
 
-    /* Aliases used by inline styles in HTML */
     --primary: var(--gold);
     --accent: var(--gold);
     --dark: var(--black);
@@ -55,7 +48,6 @@ body {
     font-weight: 300;
 }
 
-/* ── NOISE TEXTURE OVERLAY ── */
 body::before {
     content: '';
     position: fixed;
@@ -110,7 +102,6 @@ ul {
     background: var(--dark-3);
 }
 
-/* Section Header */
 .section-header {
     text-align: center;
     margin-bottom: 70px;
@@ -153,9 +144,6 @@ ul {
     font-style: italic;
 }
 
-/* ===========================
-   BUTTONS
-   =========================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -183,7 +171,6 @@ ul {
 }
 
 
-/* .btn-primary, .btn-accent, .btn-outline share the same gold border style — inherits from .btn */
 .btn-primary,
 .btn-accent,
 .btn-outline {
@@ -239,9 +226,6 @@ ul {
     color: var(--gold-light);
 }
 
-/* ===========================
-   TOP BAR
-   =========================== */
 .top-bar {
     background: var(--black);
     color: var(--white);
@@ -293,9 +277,6 @@ ul {
     color: var(--gold);
 }
 
-/* ===========================
-   NAVBAR
-   =========================== */
 .navbar {
     position: sticky;
     top: 0;
@@ -392,7 +373,6 @@ ul {
     opacity: 0.5;
 }
 
-/* Nav CTA button — higher specificity to override .nav-links li a */
 .nav-links li a.nav-cta {
     border: 1px solid var(--gold);
     color: var(--gold);
@@ -413,7 +393,6 @@ ul {
     color: var(--black);
 }
 
-/* Mobile Toggle */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -444,9 +423,6 @@ ul {
     transform: rotate(-45deg) translate(4px, -4px);
 }
 
-/* ===========================
-   HERO
-   =========================== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -456,7 +432,6 @@ ul {
     overflow: hidden;
 }
 
-/* Vertical gold lines */
 .hero::before {
     content: '';
     position: absolute;
@@ -572,9 +547,6 @@ ul {
     50% { transform: rotate(45deg) translateY(8px); opacity: 0.15; }
 }
 
-/* ===========================
-   SERVICES CARDS
-   =========================== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -682,9 +654,6 @@ ul {
     z-index: 1;
 }
 
-/* ===========================
-   CYBER TOOLS SECTION
-   =========================== */
 .tools-section {
     background: var(--dark-2);
 }
@@ -770,7 +739,6 @@ ul {
     letter-spacing: 0.04em;
 }
 
-/* Tool Input */
 .tool-input-group {
     display: flex;
     gap: 12px;
@@ -804,7 +772,6 @@ ul {
     white-space: nowrap;
 }
 
-/* Tool Loading */
 .tool-loading {
     display: flex;
     align-items: center;
@@ -829,7 +796,6 @@ ul {
     to { transform: rotate(360deg); }
 }
 
-/* Tool Result */
 .tool-result {
 }
 
@@ -933,7 +899,6 @@ ul {
     margin-bottom: 12px;
 }
 
-/* Progress bar for scanning */
 .scan-progress {
     margin: 40px 0;
     text-align: center;
@@ -966,7 +931,6 @@ ul {
     letter-spacing: 0.1em;
 }
 
-/* Tools disclaimer */
 .tools-disclaimer {
     text-align: center;
     margin-top: 28px;
@@ -984,9 +948,6 @@ ul {
     text-decoration: underline;
 }
 
-/* ===========================
-   LIVE ATTACK MAP
-   =========================== */
 .attack-map-section {
     background: var(--black);
     overflow: hidden;
@@ -1061,7 +1022,6 @@ ul {
     letter-spacing: 0.2em;
 }
 
-/* Attack Feed */
 .attack-feed {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
@@ -1205,9 +1165,6 @@ ul {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* ===========================
-   MISSION SECTION
-   =========================== */
 .mission-section {
     background: var(--black);
 }
@@ -1352,9 +1309,6 @@ ul {
     z-index: 1;
 }
 
-/* ===========================
-   STATS BANNER
-   =========================== */
 .stats-banner {
     background: var(--dark-2);
     padding: 90px 0;
@@ -1373,7 +1327,6 @@ ul {
     background: radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
 }
 
-/* Stats + Contact variant */
 .stats-contact-banner {
     text-align: left;
     padding: 90px 0;
@@ -1447,7 +1400,6 @@ ul {
     letter-spacing: 0.06em;
 }
 
-/* Stats features list */
 .stats-features {
     display: flex;
     flex-direction: column;
@@ -1471,7 +1423,6 @@ ul {
     color: var(--gold);
 }
 
-/* Stats Contact Form */
 .stats-contact-form {
     background: rgba(14, 14, 14, 0.8);
     border: 1px solid var(--dark-border);
@@ -1558,9 +1509,6 @@ ul {
     margin-top: 4px;
 }
 
-/* ===========================
-   CTA SECTION
-   =========================== */
 .cta-section {
     background: var(--dark-3);
     border-top: 1px solid var(--dark-border);
@@ -1593,9 +1541,6 @@ ul {
     flex-wrap: wrap;
 }
 
-/* ===========================
-   PRICING SECTION
-   =========================== */
 .pricing-header {
     text-align: center;
     margin-bottom: 60px;
@@ -1628,7 +1573,6 @@ ul {
     position: relative;
 }
 
-/* Corner ornaments on pricing cards */
 .pricing-card::before {
     content: '';
     position: absolute;
@@ -1773,9 +1717,6 @@ ul {
     width: 100%;
 }
 
-/* ===========================
-   SERVICE PAGE - HERO
-   =========================== */
 .page-hero {
     background: var(--black);
     padding: 150px 40px 90px;
@@ -1824,7 +1765,6 @@ ul {
     margin: 12px auto 0;
 }
 
-/* Service Detail Content */
 .service-detail {
     padding: 80px 0;
     background: var(--black);
@@ -1918,9 +1858,6 @@ ul {
     margin-top: 12px;
 }
 
-/* ===========================
-   CONTACT PAGE
-   =========================== */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1982,7 +1919,6 @@ ul {
     color: var(--gold);
 }
 
-/* Contact Form */
 .contact-form-card {
     background: var(--dark-card);
     border: 1px solid var(--dark-border);
@@ -2064,9 +2000,6 @@ ul {
     width: 100%;
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
 .footer {
     position: relative;
     background: var(--black);
@@ -2170,9 +2103,6 @@ ul {
     color: var(--gold);
 }
 
-/* ===========================
-   ANIMATIONS
-   =========================== */
 .fade-in {
     opacity: 0;
     transform: translateY(22px);
@@ -2206,7 +2136,6 @@ ul {
     transform: translateX(0);
 }
 
-/* Glow line separator */
 .glow-line {
     width: 100%;
     height: 1px;
@@ -2214,11 +2143,6 @@ ul {
     opacity: 0.2;
 }
 
-/* ===========================
-   CYBER SECURITY EFFECTS
-   =========================== */
-
-/* Scan line sweeping across hero */
 .hero .scan-line {
     position: absolute;
     top: 0;
@@ -2240,7 +2164,6 @@ ul {
     100% { top: 100%; opacity: 0; }
 }
 
-/* Glitch effect for hero title */
 .hero-text h1 {
     position: relative;
 }
@@ -2289,14 +2212,12 @@ ul {
     100% { transform: translateX(0); opacity: 0; }
 }
 
-/* Shield pulse on service card icons */
 @keyframes shieldPulse {
     0% { opacity: 0.3; transform: scale(1); }
     50% { opacity: 0; transform: scale(1.25); }
     100% { opacity: 0; transform: scale(1.25); }
 }
 
-/* Matrix rain canvas overlay */
 #matrix-canvas {
     position: fixed;
     top: 0;
@@ -2308,7 +2229,6 @@ ul {
     opacity: 0.02;
 }
 
-/* Cyber status bar in hero */
 .cyber-status {
     position: absolute;
     bottom: 70px;
@@ -2348,7 +2268,6 @@ ul {
     50% { opacity: 0.3; }
 }
 
-/* Typing cursor for hero subtitle */
 .hero-subtitle .cursor {
     display: inline-block;
     width: 1px;
@@ -2364,12 +2283,10 @@ ul {
     50% { opacity: 0; }
 }
 
-/* Encrypted text hover effect for section tags */
 .section-tag {
     cursor: default;
 }
 
-/* Data flow lines on stats banner */
 .stats-banner .data-flow {
     position: absolute;
     top: 50%;
@@ -2397,13 +2314,11 @@ ul {
     100% { transform: translateX(100%); }
 }
 
-/* Glow pulse on stat number */
 @keyframes statGlow {
     0%, 100% { text-shadow: 0 0 20px rgba(201, 168, 76, 0.05); }
     50% { text-shadow: 0 0 40px rgba(201, 168, 76, 0.15); }
 }
 
-/* Screen reader only (accessibility) */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -2416,9 +2331,6 @@ ul {
     border: 0;
 }
 
-/* ===========================
-   UTILITY CLASSES (replacing inline styles)
-   =========================== */
 .text-accent-bold {
     color: var(--gold);
     font-weight: 600;
@@ -2470,7 +2382,6 @@ ul {
     color: var(--gold);
 }
 
-/* Shodan/DNS inline result styles (moved from JS) */
 .result-subdomain-tag {
     display: inline-block;
     margin: 2px 8px 2px 0;
@@ -2546,9 +2457,6 @@ ul {
     color: #27ae60;
 }
 
-/* ===========================
-   FOCUS STATES (WCAG 2.1)
-   =========================== */
 :focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
@@ -2590,9 +2498,6 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
 @media (max-width: 1024px) {
     .container {
         padding: 0 24px;
@@ -2690,7 +2595,6 @@ textarea:focus-visible {
         margin-bottom: 40px;
     }
 
-    /* CYBERSECURITY text on mobile */
     .logo::after {
         font-size: 0.75rem;
         letter-spacing: 0.25em;
@@ -2740,7 +2644,6 @@ textarea:focus-visible {
         width: 100%;
     }
 
-    /* Page hero mobile */
     .page-hero {
         padding: 90px 20px 50px;
     }
@@ -2755,7 +2658,6 @@ textarea:focus-visible {
         line-height: 1.8;
     }
 
-    /* Hero mobile */
     .hero {
         min-height: auto;
         padding: 40px 0;
@@ -2809,7 +2711,6 @@ textarea:focus-visible {
         align-items: center;
     }
 
-    /* Pricing mobile */
     .pricing-grid {
         grid-template-columns: 1fr;
         max-width: none;
@@ -2827,7 +2728,6 @@ textarea:focus-visible {
         transform: none;
     }
 
-    /* Service detail mobile */
     .service-detail {
         padding: 50px 0;
     }
@@ -2841,18 +2741,15 @@ textarea:focus-visible {
         padding: 24px;
     }
 
-    /* Contact mobile */
     .contact-form-card {
         padding: 28px 20px;
     }
 
-    /* Buttons mobile */
     .btn {
         padding: 14px 28px;
         font-size: 0.75rem;
     }
 
-    /* Footer mobile */
     .footer {
         padding-top: 50px;
     }
@@ -2894,7 +2791,6 @@ textarea:focus-visible {
         padding: 20px 16px;
     }
 
-    /* CTA section mobile */
     .cta-section {
         padding: 50px 0;
     }

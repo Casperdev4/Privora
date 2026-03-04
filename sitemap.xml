@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://privora.fr/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, entreprise de cybersécurité pour TPE et PME</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/privora_hero.webp</image:loc>
+      <image:title>Privora - La cybersécurité n'est pas une option</image:title>
+      <image:caption>Image héro illustrant les solutions de cybersécurité Privora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://privora.fr/entreprise-cybersecurite.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, supervision et SOC 24/7</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://privora.fr/infogerance-informatique.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, infogérance informatique entreprise</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://privora.fr/pentest-audit.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, pentest et audits de sécurité</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://privora.fr/tarif-infogerance-informatique.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, offres et tarifs cybersécurité</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://privora.fr/cybersecurite-pme.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://privora.fr/privora_logo.png</image:loc>
+      <image:title>Privora - Logo cybersécurité</image:title>
+      <image:caption>Logo officiel de Privora, contact cybersécurité PME</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/footer.webp</image:loc>
+      <image:title>Privora - Arrière-plan footer</image:title>
+      <image:caption>Image de fond du pied de page Privora</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

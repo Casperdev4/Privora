@@ -1,17 +1,11 @@
-/* ===========================
-   PRIVORA - Cyber Script
-   =========================== */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ---- Utility: Sanitize HTML to prevent XSS ----
     function sanitizeHTML(str) {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
     }
 
-    // ---- Utility: Throttle function ----
     function throttle(fn, delay) {
         let lastCall = 0;
         return function(...args) {
@@ -23,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // ---- Matrix Rain Background ----
     const matrixCanvas = document.getElementById('matrix-canvas');
     if (matrixCanvas) {
         const mCtx = matrixCanvas.getContext('2d');
@@ -61,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200));
     }
 
-    // ---- Particle Canvas ----
     const canvas = document.getElementById('particles-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -125,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.fillStyle = `rgba(201, 162, 39, ${this.opacity * glow})`;
                 ctx.fill();
 
-                // Glow
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(201, 162, 39, ${this.opacity * glow * 0.15})`;
@@ -133,19 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Create particles
         const particleCount = Math.min(100, Math.floor(canvas.width * canvas.height / 12000));
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
 
-        // Spatial grid for O(n) particle connection lookups
         const GRID_SIZE = 140;
 
         function connectParticles() {
             const grid = {};
 
-            // Build spatial grid
             for (let i = 0; i < particles.length; i++) {
                 const gx = Math.floor(particles[i].x / GRID_SIZE);
                 const gy = Math.floor(particles[i].y / GRID_SIZE);
@@ -154,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 grid[key].push(i);
             }
 
-            // Check only neighboring cells
             for (let i = 0; i < particles.length; i++) {
                 const gx = Math.floor(particles[i].x / GRID_SIZE);
                 const gy = Math.floor(particles[i].y / GRID_SIZE);
@@ -185,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Connect to mouse
             if (mouse.x !== null) {
                 for (let i = 0; i < particles.length; i++) {
                     const ddx = mouse.x - particles[i].x;
@@ -216,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         animateParticles();
     }
 
-    // ---- Mobile Navigation Toggle ----
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -234,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ---- Navbar scroll effect ----
     const navbar = document.getElementById('navbar');
     if (navbar) {
         window.addEventListener('scroll', throttle(() => {
@@ -246,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100));
     }
 
-    // ---- Scroll animations with stagger ----
     const fadeElements = document.querySelectorAll('.service-card, .mission-card, .pricing-card, .blog-card, .contact-detail, .sidebar-card');
 
     fadeElements.forEach((el, index) => {
@@ -271,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fadeElements.forEach(el => observer.observe(el));
 
-    // ---- Section headers fade in ----
     const sectionHeaders = document.querySelectorAll('.section-header, .section-tag, .page-hero h1, .page-hero p');
     sectionHeaders.forEach(el => {
         el.classList.add('fade-in');
@@ -286,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     sectionHeaders.forEach(el => headerObserver.observe(el));
 
-    // ---- Counter Animation ----
     const statNumbers = document.querySelectorAll('.stat-number[data-target]');
 
     const counterObserver = new IntersectionObserver((entries) => {
@@ -321,7 +302,6 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(update);
     }
 
-    // ---- Smooth scroll ----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -335,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ---- Contact form handler (shared) ----
     function handleContactForm(form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -382,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const statsContactForm = document.getElementById('statsContactForm');
     if (statsContactForm) handleContactForm(statsContactForm);
 
-    // ---- Notification helper ----
     function showNotification(message, type) {
         const existing = document.querySelector('.notification');
         if (existing) existing.remove();
@@ -414,7 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // ---- Cyber Tools Section ----
     const toolTabs = document.querySelectorAll('.tool-tab');
     const toolPanels = document.querySelectorAll('.tool-panel');
 
@@ -429,7 +406,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // ---- IP Checker (AbuseIPDB demo) ----
         const ipCheck = document.getElementById('ipCheck');
         const ipInput = document.getElementById('ipInput');
         if (ipCheck && ipInput) {
@@ -444,7 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ipInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') ipCheck.click(); });
         }
 
-        // ---- URL Scanner (VirusTotal demo) ----
         const urlScan = document.getElementById('urlScan');
         const urlInput = document.getElementById('urlInput');
         if (urlScan && urlInput) {
@@ -459,7 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
             urlInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') urlScan.click(); });
         }
 
-        // ---- DNS Intel (SecurityTrails demo) ----
         const dnsCheck = document.getElementById('dnsCheck');
         const dnsInput = document.getElementById('dnsInput');
         if (dnsCheck && dnsInput) {
@@ -474,7 +448,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dnsInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') dnsCheck.click(); });
         }
 
-        // ---- Shodan Exposure ----
         const shodanCheck = document.getElementById('shodanCheck');
         const shodanInput = document.getElementById('shodanInput');
         if (shodanCheck && shodanInput) {
@@ -490,7 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Scanning animation helper
     function runToolScan(resultId, message, callback) {
         const container = document.getElementById(resultId);
         if (!container) return;
@@ -507,7 +479,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
     }
 
-    // IP Reputation Result (AbuseIPDB style)
     function generateIPResult(rawIp) {
         const ip = sanitizeHTML(rawIp);
         const hash = ip.split('.').reduce((a, b) => a + parseInt(b), 0);
@@ -562,7 +533,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // URL Scanner Result (VirusTotal style)
     function generateURLResult(rawUrl) {
         const url = sanitizeHTML(rawUrl);
         const hash = url.length + url.charCodeAt(0);
@@ -607,7 +577,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // DNS Intel Result (SecurityTrails style)
     function generateDNSResult(rawDomain) {
         const domain = sanitizeHTML(rawDomain);
         const hash = domain.length + domain.charCodeAt(0);
@@ -654,7 +623,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // Shodan Exposure Result
     function generateShodanResult(rawTarget) {
         const target = sanitizeHTML(rawTarget);
         const hash = target.length + target.charCodeAt(0);
@@ -709,14 +677,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // ---- Typing effect for hero h1 (homepage only) ----
     const heroH1 = document.querySelector('.hero-text h1');
     if (heroH1) {
         heroH1.style.opacity = '0';
         heroH1.style.animation = 'fadeSlideUp 0.8s ease forwards 0.3s';
     }
 
-    // ---- Encrypted text scramble on section tags ----
     const scrambleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!?<>{}[]';
 
     document.querySelectorAll('.section-tag').forEach(tag => {
@@ -729,7 +695,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isAnimating = true;
             let iterations = 0;
 
-            // Clear any leftover interval (safety)
             if (currentInterval) clearInterval(currentInterval);
 
             currentInterval = setInterval(() => {
@@ -753,7 +718,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ---- Parallax on scroll for hero ----
     const hero = document.querySelector('.hero');
     if (hero) {
         const heroBg = hero.querySelector('.hero-bg-image');
@@ -771,7 +735,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 16));
     }
 
-    // Add keyframes dynamically
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fadeSlideUp {
@@ -785,7 +748,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // ---- 3D Globe Attack Map ----
     const globeContainer = document.getElementById('globeViz');
     if (globeContainer && typeof Globe !== 'undefined') {
         const feedList = document.getElementById('attackFeedList');
@@ -794,7 +756,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let attackTotal = 0;
         let blockedTotal = 0;
 
-        // Cities with real lat/lng coordinates
         const cities = [
             { name: 'Paris', lat: 48.86, lng: 2.35, flag: '\uD83C\uDDEB\uD83C\uDDF7' },
             { name: 'New York', lat: 40.71, lng: -74.01, flag: '\uD83C\uDDFA\uD83C\uDDF8' },
@@ -828,7 +789,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const severities = ['critical', 'high', 'medium', 'low'];
         const sevWeights = [0.1, 0.25, 0.4, 0.25];
 
-        // Country code to lat/lng + flag lookup
         const countryCoords = {
             US: { lat: 38.0, lng: -97.0, flag: '\uD83C\uDDFA\uD83C\uDDF8', name: 'USA' },
             CN: { lat: 35.0, lng: 105.0, flag: '\uD83C\uDDE8\uD83C\uDDF3', name: 'Chine' },
@@ -865,7 +825,6 @@ document.addEventListener('DOMContentLoaded', () => {
             PH: { lat: 12.9, lng: 121.8, flag: '\uD83C\uDDF5\uD83C\uDDED', name: 'Philippines' }
         };
 
-        // Map ThreatFox threat types to readable labels
         const threatTypeLabels = {
             'botnet_cc': 'Botnet C2',
             'payload_delivery': 'Payload Delivery',
@@ -897,7 +856,6 @@ document.addEventListener('DOMContentLoaded', () => {
                    sev === 'medium' ? '#ffcc00' : '#27ae60';
         }
 
-        // ---- Real Threat Intelligence (ThreatFox - abuse.ch) ----
         let realIOCs = [];
         let realIOCIndex = 0;
 
@@ -930,21 +888,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Fetch real threats immediately
         fetchRealThreats();
-        // Refresh every 5 minutes (store ref to allow cleanup)
+
         let threatRefreshInterval = setInterval(fetchRealThreats, 5 * 60 * 1000);
 
         let arcsData = [];
         let globe = null;
 
-        // Preload earth textures early
         const preloadEarth = new Image();
         preloadEarth.src = 'https://unpkg.com/three-globe/example/img/earth-night.jpg';
         const preloadSky = new Image();
         preloadSky.src = 'https://unpkg.com/three-globe/example/img/night-sky.png';
 
-        // Show loading state
         globeContainer.innerHTML = '<div class="tool-loading" style="height:500px"><div class="tool-spinner"></div><span>Chargement du globe...</span></div>';
 
         function initGlobe() {
@@ -985,7 +940,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 200));
         }
 
-        // Add arc to globe
         function addArc(startLat, startLng, endLat, endLng, color) {
             const arcId = Date.now() + Math.random();
             arcsData.push({ id: arcId, startLat, startLng, endLat, endLng, color });
@@ -996,7 +950,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         }
 
-        // Add entry to feed
         function addFeedEntry(flag, ip, targetName, type, sev, isReal) {
             if (!feedList) return;
             const timeStr = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -1020,7 +973,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Create a REAL attack from ThreatFox IOC data
         function createRealAttack() {
             if (!globe || realIOCs.length === 0) return false;
 
@@ -1030,7 +982,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const srcCoords = countryCoords[ioc.country];
             if (!srcCoords) return false;
 
-            // Target = Paris (Privora HQ) or random city
             const tgt = Math.random() > 0.3
                 ? { lat: 48.86, lng: 2.35, name: 'Paris' }
                 : cities[Math.floor(Math.random() * cities.length)];
@@ -1050,7 +1001,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         }
 
-        // Create a SIMULATED attack
         function createSimAttack() {
             if (!globe) return;
 
@@ -1070,9 +1020,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (blockedCountEl) blockedCountEl.textContent = blockedTotal.toLocaleString('fr-FR');
         }
 
-        // Spawn attacks: prefer real data when available, mix with simulation
         function spawnAttacks() {
-            // 60% chance to use real data if available
+
             if (realIOCs.length > 0 && Math.random() < 0.6) {
                 if (!createRealAttack()) createSimAttack();
             } else {
@@ -1081,7 +1030,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(spawnAttacks, 800 + Math.random() * 2000);
         }
 
-        // Start globe when section becomes visible
         const mapObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 initGlobe();
