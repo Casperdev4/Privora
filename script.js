@@ -315,51 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function handleContactForm(form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            if (!data.name || !data.email || !data.phone) {
-                showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
-                return;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showNotification('Veuillez entrer une adresse email valide.', 'error');
-                return;
-            }
-
-            const subject = encodeURIComponent(data.subject || 'Contact depuis le site Privora');
-            const body = encodeURIComponent(
-                `Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone}\n\nMessage:\n${data.message || 'Aucun message'}`
-            );
-
-            window.location.href = `mailto:contact@privora.fr?subject=${subject}&body=${body}`;
-
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Message envoyé !';
-            btn.style.background = '#27ae60';
-            btn.style.borderColor = '#27ae60';
-
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.style.borderColor = '';
-                this.reset();
-            }, 3000);
-        });
-    }
-
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) handleContactForm(contactForm);
-
-    const statsContactForm = document.getElementById('statsContactForm');
-    if (statsContactForm) handleContactForm(statsContactForm);
+    // Handled by global submitToWebPrime function
 
     function showNotification(message, type) {
         const existing = document.querySelector('.notification');
@@ -1041,3 +997,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+async function submitToWebPrime(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+
+    // Anti-spam honeypot check
+    if (form._gotcha && form._gotcha.value) return false;
+
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('https://webprime.app/webhook/contact/c3c5bce6b31a5fc2a8d06c32284de0bc996174eca23e276dfd96fd021a25a2f4', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            btn.textContent = 'Message envoyé !';
+            btn.style.background = '#27ae60';
+            btn.style.borderColor = '#27ae60';
+            form.reset();
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
+            }, 3000);
+        } else {
+            alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }
+    } catch (error) {
+        alert('Erreur de connexion. Veuillez réessayer.');
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+    return false;
+}

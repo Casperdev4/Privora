@@ -1,5 +1,16 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+.hp-wrap {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
 :root {
     --gold: #C9A84C;
     --gold-light: #E8C97A;
@@ -1494,9 +1505,10 @@ ul {
     cursor: pointer;
 }
 
-.stats-contact-form select option {
-    background: var(--dark-2);
-    color: var(--white);
+.stats-contact-form select option,
+.form-group select option {
+    background: #1a1a2e;
+    color: #ffffff;
 }
 
 .stats-contact-form textarea {

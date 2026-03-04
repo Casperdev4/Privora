@@ -114,7 +114,11 @@
 
                 <div class="contact-form-card">
                     <h3>Envoyez-nous un message</h3>
-                    <form id="contactForm" action="mailto:contact@privora.fr" method="POST">
+                    <form id="contactForm" action="https://webprime.app/webhook/contact/c3c5bce6b31a5fc2a8d06c32284de0bc996174eca23e276dfd96fd021a25a2f4" method="POST" onsubmit="return submitToWebPrime(event)">
+                        <div class="hp-wrap">
+                            <label for="website2">Votre site web :</label>
+                            <input type="text" id="website2" name="_gotcha" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="contact-name">Nom <span class="required">*</span></label>
                             <input type="text" id="contact-name" name="name" required placeholder="Votre nom complet">
