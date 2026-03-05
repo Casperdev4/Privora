@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function initMatrixRain(canvasId) {
+    function initMatrixRain(canvasId, opts) {
         const cvs = document.getElementById(canvasId);
         if (!cvs) return;
         const ctx = cvs.getContext('2d');
@@ -25,26 +25,51 @@ document.addEventListener('DOMContentLoaded', () => {
         cvs.width = parent.offsetWidth;
         cvs.height = parent.offsetHeight;
 
+        const transparent = opts && opts.transparent;
+        const charAlpha = (opts && opts.charAlpha) || 0.3;
+        const trailLen = (opts && opts.trailLen) || 12;
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
         const fontSize = 14;
         const columns = Math.floor(cvs.width / fontSize);
         const drops = Array(columns).fill(1);
+        const trails = Array.from({length: columns}, () => []);
 
         function draw() {
-            ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
-            ctx.fillRect(0, 0, cvs.width, cvs.height);
+            if (transparent) {
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+                ctx.font = fontSize + 'px monospace';
+                for (let i = 0; i < drops.length; i++) {
+                    const newChar = chars[Math.floor(Math.random() * chars.length)];
+                    trails[i].push({y: drops[i] * fontSize, ch: newChar});
+                    if (trails[i].length > trailLen) trails[i].shift();
 
-            ctx.fillStyle = 'rgba(201, 162, 39, 0.3)';
-            ctx.font = fontSize + 'px monospace';
+                    for (let t = 0; t < trails[i].length; t++) {
+                        const alpha = charAlpha * ((t + 1) / trails[i].length);
+                        ctx.fillStyle = 'rgba(201, 162, 39, ' + alpha + ')';
+                        ctx.fillText(trails[i][t].ch, i * fontSize, trails[i][t].y);
+                    }
 
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > cvs.height && Math.random() > 0.975) {
-                    drops[i] = 0;
+                    if (drops[i] * fontSize > cvs.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                        trails[i] = [];
+                    }
+                    drops[i]++;
                 }
-                drops[i]++;
+            } else {
+                ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+                ctx.fillRect(0, 0, cvs.width, cvs.height);
+                ctx.fillStyle = 'rgba(201, 162, 39, ' + charAlpha + ')';
+                ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > cvs.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
             }
         }
 
@@ -56,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200));
     }
 
-    initMatrixRain('matrix-canvas');
-    initMatrixRain('matrix-canvas-footer');
+    initMatrixRain('matrix-canvas', {transparent: true, charAlpha: 0.6, trailLen: 14});
+    initMatrixRain('matrix-canvas-footer', {transparent: true, charAlpha: 0.6, trailLen: 14});
 
     const canvas = document.getElementById('particles-canvas');
     if (canvas) {
