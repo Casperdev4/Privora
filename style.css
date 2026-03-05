@@ -2238,15 +2238,16 @@ ul {
     100% { opacity: 0; transform: scale(1.25); }
 }
 
-#matrix-canvas {
-    position: fixed;
+#matrix-canvas,
+#matrix-canvas-footer {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 2;
     pointer-events: none;
-    opacity: 0.02;
+    opacity: 0.15;
 }
 
 .cyber-status {
@@ -2622,7 +2623,7 @@ textarea:focus-visible {
     }
 
     .nav-inner {
-        height: 56px;
+        height: 64px;
     }
 
     .nav-toggle {
@@ -2632,7 +2633,7 @@ textarea:focus-visible {
     .nav-links {
         display: none;
         position: absolute;
-        top: 56px;
+        top: 64px;
         left: 0;
         right: 0;
         background: rgba(8, 8, 8, 0.97);
@@ -2844,7 +2845,7 @@ textarea:focus-visible {
 
 @media (max-width: 480px) {
     .nav-inner {
-        height: 50px;
+        height: 58px;
     }
 
     .logo img {
@@ -2852,7 +2853,7 @@ textarea:focus-visible {
     }
 
     .nav-links {
-        top: 50px;
+        top: 58px;
     }
 
     .hero-text h1 {

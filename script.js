@@ -17,42 +17,47 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    const matrixCanvas = document.getElementById('matrix-canvas');
-    if (matrixCanvas) {
-        const mCtx = matrixCanvas.getContext('2d');
-        matrixCanvas.width = window.innerWidth;
-        matrixCanvas.height = window.innerHeight;
+    function initMatrixRain(canvasId) {
+        const cvs = document.getElementById(canvasId);
+        if (!cvs) return;
+        const ctx = cvs.getContext('2d');
+        const parent = cvs.parentElement;
+        cvs.width = parent.offsetWidth;
+        cvs.height = parent.offsetHeight;
 
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
         const fontSize = 14;
-        const columns = Math.floor(matrixCanvas.width / fontSize);
+        const columns = Math.floor(cvs.width / fontSize);
         const drops = Array(columns).fill(1);
 
-        function drawMatrix() {
-            mCtx.fillStyle = 'rgba(5, 5, 5, 0.05)';
-            mCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+        function draw() {
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+            ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-            mCtx.fillStyle = 'rgba(201, 162, 39, 0.3)';
-            mCtx.font = fontSize + 'px monospace';
+            ctx.fillStyle = 'rgba(201, 162, 39, 0.3)';
+            ctx.font = fontSize + 'px monospace';
 
             for (let i = 0; i < drops.length; i++) {
                 const text = chars[Math.floor(Math.random() * chars.length)];
-                mCtx.fillText(text, i * fontSize, drops[i] * fontSize);
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-                if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+                if (drops[i] * fontSize > cvs.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
                 drops[i]++;
             }
         }
 
-        setInterval(drawMatrix, 80);
+        setInterval(draw, 80);
 
         window.addEventListener('resize', throttle(() => {
-            matrixCanvas.width = window.innerWidth;
-            matrixCanvas.height = window.innerHeight;
+            cvs.width = parent.offsetWidth;
+            cvs.height = parent.offsetHeight;
         }, 200));
     }
+
+    initMatrixRain('matrix-canvas');
+    initMatrixRain('matrix-canvas-footer');
 
     const canvas = document.getElementById('particles-canvas');
     if (canvas) {
