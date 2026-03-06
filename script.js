@@ -1037,6 +1037,18 @@ async function submitToWebPrime(e) {
     // Anti-spam honeypot check
     if (form._gotcha && form._gotcha.value) return false;
 
+    // Validation numéro de téléphone français mobile (06, 07, +336, +337)
+    const phoneInput = form.querySelector('input[name="phone"]');
+    if (phoneInput) {
+        const phone = phoneInput.value.replace(/[\s.\-()]/g, '');
+        const phoneRegex = /^(\+33[67]\d{8}|0[67]\d{8})$/;
+        if (!phoneRegex.test(phone)) {
+            alert('Veuillez entrer un numéro de téléphone mobile français valide (06, 07, +336, +337).');
+            phoneInput.focus();
+            return false;
+        }
+    }
+
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
 

@@ -337,7 +337,7 @@
                             <label for="scf-email" class="sr-only">Email</label>
                             <input type="email" id="scf-email" name="email" placeholder="Email *" required>
                             <label for="scf-phone" class="sr-only">Téléphone</label>
-                            <input type="tel" id="scf-phone" name="phone" placeholder="Téléphone *" required>
+                            <input type="tel" id="scf-phone" name="phone" placeholder="Téléphone *" required pattern="^(\+33[67]\d{8}|0[67]\d{8})$" title="Numéro français mobile uniquement (06, 07, +336, +337)">
                         </div>
                         <label for="scf-subject" class="sr-only">Sujet</label>
                         <select id="scf-subject" name="subject">

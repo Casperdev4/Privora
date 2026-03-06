@@ -121,7 +121,7 @@
                         </div>
                         <div class="form-group">
                             <label for="contact-phone">Téléphone <span class="required">*</span></label>
-                            <input type="tel" id="contact-phone" name="phone" required placeholder="06 XX XX XX XX">
+                            <input type="tel" id="contact-phone" name="phone" required placeholder="06 XX XX XX XX" pattern="^(\+33[67]\d{8}|0[67]\d{8})$" title="Numéro français mobile uniquement (06, 07, +336, +337)">
                         </div>
                         <div class="form-group">
                             <label for="contact-subject">Sujet</label>
