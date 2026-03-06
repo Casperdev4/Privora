@@ -93,6 +93,38 @@
   </url>
 
   <url>
+    <loc>https://privora.fr/privora-cybersecurite.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://privora.fr/anssi-visa-securite.png</image:loc>
+      <image:title>Certification ANSSI Visa de Sécurité</image:title>
+      <image:caption>Visa de sécurité délivré par l'ANSSI pour la plateforme EDR/EPP déployée par Privora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/bsi-certification.png</image:loc>
+      <image:title>Certification BSI allemande</image:title>
+      <image:caption>Certification BSI pour la solution de cybersécurité partenaire de Privora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/cybersecurity-made-in-europe.png</image:loc>
+      <image:title>Cybersecurity Made in Europe</image:title>
+      <image:caption>Label Cybersecurity Made in Europe, technologie souveraine européenne</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/cyber-essentials-certified-plus.png</image:loc>
+      <image:title>Cyber Essentials Certified Plus</image:title>
+      <image:caption>Certification Cyber Essentials Plus pour la protection des endpoints</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://privora.fr/top-250-ey-numeum-2024.png</image:loc>
+      <image:title>Prix International Top 250 EY Numeum 2024</image:title>
+      <image:caption>Prix Top 250 des éditeurs de logiciels EY Numeum 2024</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://privora.fr/cybersecurite-pme.html</loc>
     <lastmod>2026-03-04</lastmod>
     <changefreq>monthly</changefreq>

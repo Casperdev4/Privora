@@ -2519,7 +2519,49 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin: 32px 0 40px;
+    align-items: center;
+}
+
+.certification-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 12px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    transition: border-color 0.3s;
+}
+
+.certification-item:hover {
+    border-color: var(--gold);
+}
+
+.certification-item img {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.certification-item span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text);
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
 @media (max-width: 1024px) {
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .container {
         padding: 0 24px;
     }
@@ -2604,6 +2646,15 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .certification-item img {
+        max-height: 60px;
+    }
+
     .container {
         padding: 0 16px;
     }
@@ -2689,7 +2740,7 @@ textarea:focus-visible {
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .hero-subtitle {
@@ -2857,7 +2908,7 @@ textarea:focus-visible {
     }
 
     .hero-text h1 {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
 
     .hero-subtitle {
